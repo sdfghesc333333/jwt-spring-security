@@ -2,6 +2,7 @@ package com.springbootproject.springbootproject.Utils;
 
 import java.text.ParseException;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +46,8 @@ public class JwtUtil {
 	}
 
 	public Date generateExpirationDate() {
-		return new Date(System.currentTimeMillis() + 864000000);
+//		return new Date(System.currentTimeMillis() + 864000000);
+		return new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(12));
 	}
 
 	private JWTClaimsSet getClaimsFromToken(String token) {
